@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+File 4 — app/build.gradle
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.crispyparma.wrapper"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://maven.sunmi.com/repository/maven-releases/' }
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.sunmi:printerlibrary:1.0.23'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
